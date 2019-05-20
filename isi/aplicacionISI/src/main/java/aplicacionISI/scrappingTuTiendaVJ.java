@@ -9,16 +9,16 @@ import org.jsoup.select.Elements;
 public class scrappingTuTiendaVJ {
 	public void tienda(String buscame){
 		print("running...");
-		print(buscame);
 		Document document;
+		print(buscame);
 
 		try {
 			//Get Document object after parsing the html from given url.
-			document = Jsoup.connect("buscame").get();
+			document = Jsoup.connect(buscame).get();
 			print("i am here");
 			String title = document.title(); //Get title
 			print("  Title: " + title); //Print title.
-			Elements price = document.select(".zsg-photo-card-price:contains($)"); //Get price
+			Elements price = document.select(".product_container:contains(€)"); //Get price
 			for (int i=0; i < price.size(); i++) {
 				print(price.get(i).text());
 				

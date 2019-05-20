@@ -16,19 +16,16 @@ public class HelloAppEngine extends HttpServlet {
 	
 	public scrappingTuTiendaVJ tu_tienda = new scrappingTuTiendaVJ();
 	public String busqueda="";
-	public String urlInicial  = "https://tutiendadevideojuegos.com/buscar?category_id=&controller=search&orderby=position&orderway=desc&search_query=loquequieresbuscar+";
+	public String urlInicial  = "https://www.game.es/buscar/loquequieresbuscar/o=0&ca=0000000006:1:GIDS";
 
 
 @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) 
       throws IOException {
 	String buscame = request.getParameter("buscame");
-	urlInicial = urlInicial.replace("loquequieresbuscar","buscame" );
+	urlInicial = urlInicial.replace("loquequieresbuscar", busqueda );
 	tu_tienda.tienda(urlInicial);
-    response.setContentType("text/plain");
-    response.setCharacterEncoding("UTF-8");
-
-    response.getWriter().print("Hello App Engine!\r\n");
+    
     
 	}
 
