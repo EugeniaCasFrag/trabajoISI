@@ -1,27 +1,44 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-  <head>
-    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
-    <title>Hello App Engine FrenoPrecio</title>
-  </head>
-
-  <body>
-    <h1>Tu Ludoteca</h1>
+    <head>
+        <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+        <title>JuegoTEKA</title>
+        <link rel="stylesheet" href="estiloIndex.css">
+    </head>
     
-    <form action="/hello">
-		<label>
-		<input type="text" name="buscame">
-		</label>
-		<input type="submit" value="Get information">
-	</form>
-
-    <table>
-      <tr>
-        <td colspan="2" style="font-weight:bold;">Available Servlets:</td>        
-      </tr>
-      <tr>
-      <td><a href='/hello'>The servlet</a></td> 
-      </tr>
-    </table>
-  </body>
-</html>	
+    <body>
+        <header>
+            <h1>JuegoTeka</h1>
+            <h3>Tu comparador de juegos </h3>
+        </header>
+        
+        <form  class = "formulario" action="/hello" method="get">
+            <h3>Introduzca la información</h3>
+            <label>
+                <h4>Nombre del juego</h4>
+                <input type="text" name="buscame">
+            </label>
+            
+            <label>
+                <h4>Plataforma</h4>
+                <input type="text" name="plataforma">
+            </label>
+            
+            <label>
+                <h4>Edición</h4>
+                <input type="text" name="edicion">
+            </label>
+            
+            <input class="boton" type="submit" value="Enviar información">
+        </form>
+        
+        <table class="footer">
+            <tr>
+                <td colspan="2" style="font-weight:bold;">Available Servlets:</td>
+            </tr>
+            <tr>
+            <td><a href='/hello'>The servlet</a></td>
+            </tr>
+        </table>
+    </body>
+</html>
