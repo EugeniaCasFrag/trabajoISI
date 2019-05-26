@@ -1,0 +1,74 @@
+body {
+    background-image: url(http://bustersbattery.com/wp-content/uploads/2019/01/gamer-wallpapers-gamer-wallpapers-free-desktop-backgrounds-wallpapers-path-desktop-harry-potter-wallpaper-tumblr.jpg);
+    background-size:100% 100%;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    font-family: OCR A Std, monospace;
+    margin-left:40px;
+    margin-top:50px;
+
+}
+
+
+header {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding-top: 5px;
+    padding-left: 0px;
+    padding-right: 115px;
+    font-size: 20px;
+    color:#b7ece0;
+    margin-left:0px;
+    margin-right:400px;
+    border-radius:5px;
+}
+
+header h2 {
+    margin-top: 20px;
+    margin-bottom: 8;
+    margin-left:30px;
+    font-family: Andale Mono, monospace;
+    color:#b4cfc9;
+    font-family: OCR A Std, monospace;
+}
+
+header h3 {
+    margin-top: 5px;
+    margin-left:30px;
+    font-size: smaller;
+}
+
+.resultados{
+    background-position:center;
+    background-color: rgba(255, 255, 255, 0.1);
+    color:#b4cfc9; 
+    padding-top: 5px;
+    padding-left:30px;
+    padding-right: 0px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right:400px;
+    margin-bottom:10px;
+    border-radius: 5px;
+}
+
+.lista {
+    margin-left:30px;
+    color:#8ab0a8;
+}
+
+.lista  li {
+    margin-left:40px;
+    color:white;
+}
+
+.lista h3 {
+    margin-top:5px;
+    margin-left:0px;
+    font-size:smaller:
+}
+
+header .letraeugenia {
+    color:white;
+}

@@ -17,10 +17,6 @@ public class tuTiendaVJ {
 		ArrayList<Precios> juegos = new ArrayList();
 		Precios elElegido = new Precios();
 
-
-
-
-
 		try {
 			print(buscame);
 			document = Jsoup.connect(buscame).get();
@@ -29,25 +25,36 @@ public class tuTiendaVJ {
 			Elements price = document.body().select("span.price.product-price"); //Get price
 			Elements titulos = document.body().select("a.product-name");
 			Elements url = document.body().select("a.product-name[href]");
-			
+//			Elements foto = document.body().select("img#bigpic[src]");
+
+
 			ArrayList<String>enlaces = new ArrayList();
 			for(Element i : url) {
 				String link = i.attr("href");
 				enlaces.add(link);
 			}
-			
+//			ArrayList<String>fotos = new ArrayList();
+//			for(Element i : foto) {
+//
+//				String img = i.attr("src");
+//				print("---------------------------->" + img);
+//				fotos.add(img);
+//			}
+			print("estoy vacia?" + titulos.isEmpty());
+
 			if(!price.isEmpty()) {
 				for (int i=0; i < price.size(); i++) {
 					Precios g = new Precios();
 					g.setNombre(titulos.get(i).text());
 					g.setPrecio(price.get(i).text());
 					g.setURL(enlaces.get(i));
+//					g.setImagen(fotos.get(i));
 					juegos.add(g);
 				}		
 				
 			}
 			
-			print(price.get(0).text());
+//			print(price.get(0).text());
 
 			
 			int indice = 0;
@@ -68,11 +75,10 @@ public class tuTiendaVJ {
 					first = juegos.get(i).getPrecio();
 					first = first.replace(",", ".");
 					String partes[] = first.split(" ");
-					print("--------------------_>"+partes[0]);
 					max = Float.parseFloat(partes[0]);
-					print("min "+ min);
-					print("max "+ max);
-					print(juegos.get(i).getPrecio());
+//					print("min "+ min);
+//					print("max "+ max);
+//					print(juegos.get(i).getPrecio());
 					if(min > max) {
 						min = max;
 						indice = i;
@@ -84,7 +90,7 @@ public class tuTiendaVJ {
 			elElegido.setNombre(juegos.get(indice).getNombre());
 			elElegido.setPrecio(juegos.get(indice).getPrecio());
 			elElegido.setURL(juegos.get(indice).getURL());
-			print("el elegido-> "+elElegido.getPrecio());
+//			print("el elegido-> "+elElegido.getPrecio());
 			
 		} catch (IOException e) {
 			e.printStackTrace();
