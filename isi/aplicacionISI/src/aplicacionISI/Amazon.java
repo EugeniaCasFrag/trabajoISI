@@ -21,7 +21,7 @@ import org.xml.sax.SAXException;
  * See the README.html that came with this sample for instructions on
  * configuring and running the sample.
  */
-public class JavaCodeSnippet {
+public class Amazon {
 
     /*
      * Your Access Key ID, as taken from the Your Account page.
@@ -77,7 +77,6 @@ public class JavaCodeSnippet {
 
         requestUrl = helper.sign(params);
 
-        System.out.println("Signed URL: \"" + requestUrl + "\"");
         
         //Almacenamos la informacion 
         DocumentBuilderFactory dbf =DocumentBuilderFactory.newInstance();
@@ -87,16 +86,13 @@ public class JavaCodeSnippet {
         try {
         		doc1 = db.parse(requestUrl);
                 NodeList nameOfModel= doc1.getElementsByTagName("Title"); 
-              //Extraemos el título
 
                 for(int i=0;i<nameOfModel.getLength();i++)
                 {
                   org.w3c.dom.Element el = (org.w3c.dom.Element)nameOfModel.item(i);
                   NombresAmazon.add(el.getFirstChild().getNodeValue());
                 }
-                System.out.println("Títulos :" + NombresAmazon);
                 
-                //Extraemos el precio
                 nameOfModel= doc1.getElementsByTagName("FormattedPrice");
                 for(int i=0;i<nameOfModel.getLength();i++)
                 {
@@ -104,27 +100,23 @@ public class JavaCodeSnippet {
                   org.w3c.dom.Element el = (org.w3c.dom.Element)nameOfModel.item(i);
                   preciosAmazon.add(el.getFirstChild().getNodeValue());
                 }
-                System.out.println("Precio" + preciosAmazon);
                 
-              //Extraemos la URL del terminal en Amazon
                 nameOfModel= doc1.getElementsByTagName("DetailPageURL");
                 for(int i=0;i<nameOfModel.getLength();i++)
                 {
                   
                   org.w3c.dom.Element el = (org.w3c.dom.Element)nameOfModel.item(i);
                   urlsAmazon.add(el.getFirstChild().getNodeValue());
-                }
-                System.out.println("Link" + urlsAmazon);
-                
+                }                
               
                
-                        laUrl = urlsAmazon.get(0);
-        		        elTitulo = NombresAmazon.get(0);
-        		        elPrecio = preciosAmazon.get(0);
+                laUrl = urlsAmazon.get(0);
+        		elTitulo = NombresAmazon.get(0);
+        		elPrecio = preciosAmazon.get(0);
         		        
-        		        p.setNombre(elTitulo);
-        		        p.setPrecio(elPrecio);
-        		        p.setURL(laUrl);
+        		p.setNombre(elTitulo);
+        		p.setPrecio(elPrecio);
+        		p.setURL(laUrl);
 
 
 

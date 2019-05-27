@@ -15,6 +15,7 @@ import org.xml.sax.SAXException;
 import aplicacionISI.tuTiendaVJ;
 import aplicacionISI.instantGaming;
 import aplicacionISI.Juego;
+import aplicacionISI.Amazon;
 
 
 @WebServlet(
@@ -39,7 +40,7 @@ public class HelloAppEngine extends HttpServlet {
 
 	public String urlOne   = "https://www.tiendacpu.com/buscar?controller=search&orderby=position&orderway=desc&search_query=loquequieresbsucar&submit_search=";
 	public String urlTwo  = "https://www.instant-gaming.com/es/busquedas/?q=loquequieresbsucar";
-	JavaCodeSnippet Amazon_Object = new JavaCodeSnippet();
+	Amazon Amazon_Object = new Amazon();
 
 	
 
