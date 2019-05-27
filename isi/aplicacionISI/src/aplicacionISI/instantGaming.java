@@ -28,6 +28,7 @@ public class instantGaming {
 			Elements price = document.body().select("div.price"); //Get price
 			Elements titulos = document.body().select("div.name");
 			Elements url = document.body().select("a.cover[href]");
+<<<<<<< HEAD
 //			Elements foto = document.body().select("img.picture-shadow[src]");
 			
 			ArrayList<String>enlaces = new ArrayList();
@@ -49,6 +50,20 @@ public class instantGaming {
 				print(price.get(i).text());
 //				g.setImagen(fotos.get(i));
 
+=======
+			
+			ArrayList<String>enlaces = new ArrayList();
+			for(Element i : url) {
+				String link = i.attr("href");
+				enlaces.add(link);
+			}
+			
+			for (int i=0; i < price.size(); i++) {
+				Precios g = new Precios();
+				g.setNombre(titulos.get(i).text());
+				g.setPrecio(price.get(i).text());
+				g.setURL(enlaces.get(i));
+>>>>>>> branch 'master' of https://github.com/EugeniaCasFrag/trabajoISI.git
 				juegos.add(g);
 			}
 			print(price.get(0).text());
